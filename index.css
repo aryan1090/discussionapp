@@ -7,10 +7,45 @@
 }
 .btnsrc{
     background-color: aqua;
-}
-.form{
-    background-color: violet;
+    border:1px solid #D3D3D3;
 }
 .leftpanel{
-    background-color: grey;
+    background-color: #F5F5F5;
+    border:1px solid #D3D3D3;
+    min-height: 90vh;
+}
+.onequestion{
+    border-bottom: 2px solid #D5D5D5;
+    color:grey
+}
+.form{
+    border:1px solid #D3D3D3;
+}
+.displayques,.oneres{
+    background-color:#F5F5F5;
+}
+.oneres{
+    padding: 10px;
+}
+.heading{
+    color:#6E8498
+}
+.oneres{
+    border-bottom:2px solid #D5D5D5;
+}
+.questions{
+    height:80vh;
+
+}
+.ubtn{
+    z-index: 2;
+}
+.dbtn{
+    z-index: 2;
+}
+.fa-arrow-up{
+    color: blue;
+}
+.fa-arrow-down{
+    color:red;
 }

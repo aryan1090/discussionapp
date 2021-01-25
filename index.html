@@ -6,26 +6,32 @@
     <title>Discussion App</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
     <div class="nav row p-2 m-0">
         <h1 class="header col-12">Discussion Portal</h1>
     </div>
     <div class="main row m-0">
+        <!-- Left panel -->
         <div class="col-12 col-md-6 leftpanel">
             <div class="btnsrc row p-3">
-                <button class="btn btn-primary offset-1">New question form</button>
-                <input type="text" class=" offset-1 col-md-3 searchbar rounded p-1" placeholder="search questions..."/>
+                <button class="btn btn-primary offset-1" onclick="Showform()">New question form</button>
+                <input type="text" class=" offset-1 col-md-3 searchbar rounded p-1" placeholder="search questions..." oninput="searchResult()"/>
             </div>
-            <div class="questions">
-                <div class="onequestion" id ="0">
-                <h1>Question</h1>
+            <div class="questions overflow-auto">
+                <!-- <div class="onequestion">
+                <h1 id="0" onclick="displayQues(id)">Question</h1>
                 <p>Description</p>
-                </div>
+                <i class="fas fa-arrow-up"></i>
+                <i class="fas fa-arrow-down"></i>
+                </div> -->
             </div>
         </div>
+        <!-- Start of right panel -->
         <div class="col-md-6 form">
-            <div class="container my-5">
+
+            <div class="container my-5" id="initial-form">
                 <h1>
                     Welcome to Discussion Portal!
                 </h1>
@@ -36,9 +42,38 @@
                 <button class="btn btn-primary mr-4" type="submit" onclick="addQues()">Submit</button>
                 </div>
             </div>
+            <!-- Response Form -->
+            <div class="container my-3" id="response-form" hidden>
+                <h4 class="heading">Question</h4>
+                <div class="displayques p-2">
+                    <h5>Question</h5>
+                    <p>Description</p>
+                </div><br>
+                <div class="row justify-content-end">
+                    <button class="btn btn-primary resolve mr-4" type="submit" onclick="ResolveQues(id)">Resolve</button>
+                </div>
+                <h4 class="heading">Responses</h4>
+                <div class="responses p-2">
+                    <div class="oneres">
+                        <h5>Response 11</h5>
+                        <p>qwiquwiouqoiwu</p>
+                    </div>
+                    <div class="oneres">
+                        <h5>Response 1</h5>
+                        <p>qwiquwiouqoiwu</p>
+                    </div>
+                </div><br>
+                <h4 class="heading">Add Response</h4>
+                <input type="text" placeholder="Enter Name" class="col-md-3 form-control" id="name">
+                <textarea rows="3" class="form-control" placeholder="Enter Comment" id="comment"></textarea><br>
+                <div class="row justify-content-end">
+                    <button class="btn btn-primary mr-4 responsesubmit" type="submit" onclick="addResponse(id)">Submit</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 <script src="index.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
